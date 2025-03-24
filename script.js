@@ -1,4 +1,4 @@
-// let palavra = prompt("digite uma apalavra para ser invertida: ");
+// let palavra = prompt("digite uma palavra para ser invertida: ");
 
 // let numero = palavra.length
 
@@ -73,15 +73,9 @@ function passaDias (diaDasemana, tempoPassado){
  
     let contador = diasDaSemana.findIndex((elemento) => elemento === diaDasemana)
 
-    for (let i = contador; tempoPassado > 0; tempoPassado--){
-        if (i > diasDaSemana.length){
-            i = 0
-        }  else if (tempoPassado == 0) {
-            return console.log(diaDasemana[i]);
-        } else { 
-            i++
-        }
-    }
+    let resto = (contador + tempoPassado) % diasDaSemana.length
+
+    return console.log(diasDaSemana[resto]);
 };
 
 passaDias(dia,tempo);
